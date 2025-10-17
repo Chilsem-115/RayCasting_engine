@@ -1,8 +1,9 @@
 
 #include <stdlib.h>
-#include "mlx.h"
 #include "platform.h"
 #include "window.h"
+#include "libft.h"
+#include "mlx.h"
 
 int		platform_init(t_platform *P, int width, int height, const char *title)
 {

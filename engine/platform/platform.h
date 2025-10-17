@@ -2,10 +2,9 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
-# include "libft.h"
-# include "config.h"
-# include "input.h"
+# include "input/input.h"
 # include "window.h"
+# include "_config.h"
 
 /*
  * platform includes anything that can change from a platform to another
@@ -20,7 +19,7 @@ typedef struct s_platform
 	t_input		input;
 }	t_platform;
 
-int		platform_init(t_platform *P, int width, int height, const char title);
+int		platform_init(t_platform *P, int width, int height, const char *title);
 void	platform_shutdown(t_platform *P);
 
 #endif

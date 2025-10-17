@@ -2,10 +2,10 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-# include "../platform/input.h"
+# include "platform/input/input.h"
 
 #ifndef ACTION_MAX
-# define ACTION_MAX 54
+# define ACTION_MAX 64
 #endif
 
 typedef int	t_action_id;
@@ -31,8 +31,8 @@ typedef struct s_actions
 }	t_actions;
 
 /* lifecycle */
-void	action_init();
-void	action_clear();
+void	action_init(t_actions *A);
+void	action_clear(t_actions *A);
 
 /* action registration*/
 t_action_id	actions_register(t_actions *A, const char *name);
@@ -46,8 +46,8 @@ void	actions_begin_frame(t_actions *A);
 void	actions_update_from_input(t_actions *A, const t_input *I);
 
 /* queries */
-float	action_value(const t_actions *A, t_actions_id id);
-int		action_pressed(const t_actions *A, t_actions_id id);
-int		action_released(const t_actions *A, t_actions_id id);
+float	action_value(const t_actions *A, t_action_id id);
+int		action_pressed(const t_actions *A, t_action_id id);
+int		action_released(const t_actions *A, t_action_id id);
 
 #endif

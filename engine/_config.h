@@ -8,8 +8,8 @@
 # endif
 
 /* application defaults */
-# define DEFAULT_WIDTH   1200
-# define DEFAULT_HEIGHT  800
-# define DEFAULT_TITLE   "Raygun-Engine"
+# define DEFAULT_WIDTH		1200
+# define DEFAULT_HEIGHT		800
+# define DEFAULT_TITLE		"Raygun-Engine"
 
 #endif

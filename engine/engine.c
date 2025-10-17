@@ -1,21 +1,8 @@
 
 #include "engine.h"
 #include "core/core.h"
-#include "platform/platform.h"
-#include "config.h"
 #include "platform/window.h"
-
-void    engine_push_frame(t_context *ctx, int index)
-{
-	t_platform	*P;
-
-	if (!ctx)
-		return ;
-	P = &ctx->platform;
-    if (index < 0 || index >= P->window_count)
-        return ;
-	push_frame(P->mlx, &P->windows[index]);
-}
+#include "libft.h"
 
 static int	init_context(t_context *ctx)
 {
@@ -26,11 +13,24 @@ static int	init_context(t_context *ctx)
 	return (1);
 }
 
+void    engine_push_frame(t_context *ctx, int index)
+{
+	t_platform	*P;
+
+	if (!ctx)
+		return ;
+	P = &ctx->platform;
+    if (index < 0 || index >= P->window_count)
+        return ;
+	else
+		push_frame(P->mlx, &P->windows[index]);
+}
+
 int	engine_runtime(void)
 {
 	t_context	ctx;
 
-	if (!init_context(&ctx)
+	if (!init_context(&ctx))
 			return (1);
 	core_run(&ctx);
 	platform_shutdown(&ctx.platform);

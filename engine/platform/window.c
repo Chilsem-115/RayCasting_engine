@@ -26,7 +26,7 @@ int	window_create(void *mlx, t_window *win, int width, int height, const char *t
 		ft_memset(win, 0, sizeof(*win));
 		return (0);
 	}
-	set_pixel_data(win, w, h);
+	set_pixel_data(win, width, height);
 	return (1);
 }
 
